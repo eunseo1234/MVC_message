@@ -15,12 +15,14 @@ import static org.assertj.core.api.Assertions.*;
 public class MessageSourceTest {
 
     @Autowired
-    MessageSource ms;
+    MessageSource ms;          //자동으로 messagesource로 등록
 
     @Test
     void helloMessage() {
         String result = ms.getMessage("hello", null, null);
         assertThat(result).isEqualTo("안녕");
+        //Assertions.assertThat(result).isEqualTo("안녕");     위 코드와 같음. Assertions.j 사용하고 생략가능
+        // html 수정시 test 실패화는문제 있음
     }
 
     @Test
